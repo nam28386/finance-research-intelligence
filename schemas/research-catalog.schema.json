@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research catalog v0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "records"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "records": {"type": "array", "items": {"$ref": "#/$defs/record"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "texts": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+    "id": {"type": "string", "pattern": "^RI-[0-9]{4,}$(?![\\s\\S])"},
+    "ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true},
+    "sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$(?![\\s\\S])"},
+    "time": {"type": "string", "format": "date-time"},
+    "state": {"enum": ["DISCOVERED", "SOURCE_REVIEWED", "CONTRACT_EXTRACTED", "REPRODUCED", "ADAPTED", "EMPIRICALLY_VALIDATED", "REJECTED", "SUPERSEDED", "BLOCKED"]},
+    "evidence_id": {"type": "string", "pattern": "^E-[0-9]{3,}$(?![\\s\\S])"},
+    "evidence_refs": {"type": "array", "items": {"$ref": "#/$defs/evidence_id"}, "uniqueItems": true},
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["statement", "epistemic_status", "evidence_refs", "falsifiers"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/text"},
+        "epistemic_status": {"enum": ["FACT", "MEASUREMENT", "INFERENCE", "HYPOTHESIS", "UNKNOWN"]},
+        "evidence_refs": {"$ref": "#/$defs/evidence_refs"},
+        "falsifiers": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "claims": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["research_id", "synthetic", "repository_url", "upstream_commit_sha", "revision_status", "inspected_at", "license", "research_domain", "source_references", "technical_mechanisms", "assumptions", "limitations", "evidence", "test_references", "replication_status", "applicability_across_assets", "unresolved_questions", "decision", "supersedes", "superseded_by", "lifecycle_status", "lifecycle_history"],
+      "properties": {
+        "research_id": {"$ref": "#/$defs/id"},
+        "synthetic": {"type": "boolean"},
+        "repository_url": {"type": "string", "pattern": "^https://github\\.com/[A-Za-z0-9][A-Za-z0-9-]*/[A-Za-z0-9][A-Za-z0-9_.-]*$(?![\\s\\S])"},
+        "upstream_commit_sha": {"$ref": "#/$defs/sha"},
+        "revision_status": {"enum": ["UNKNOWN", "PINNED"]},
+        "inspected_at": {"$ref": "#/$defs/time"},
+        "license": {
+          "type": "object", "additionalProperties": false,
+          "required": ["identifier", "verification_status", "evidence_refs"],
+          "properties": {
+            "identifier": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"},
+            "verification_status": {"enum": ["UNKNOWN", "UNVERIFIED", "VERIFIED"]},
+            "evidence_refs": {"$ref": "#/$defs/evidence_refs"}
+          }
+        },
+        "research_domain": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}, "uniqueItems": true},
+        "source_references": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "locator", "commit_sha", "evidence_refs"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "locator": {"$ref": "#/$defs/text"},
+              "commit_sha": {"$ref": "#/$defs/sha"},
+              "evidence_refs": {"$ref": "#/$defs/evidence_refs"}
+            }
+          }
+        },
+        "technical_mechanisms": {"$ref": "#/$defs/claims"},
+        "assumptions": {"$ref": "#/$defs/claims"},
+        "limitations": {"$ref": "#/$defs/claims"},
+        "evidence": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["evidence_id", "kind", "reference", "summary", "recorded_at"],
+            "properties": {
+              "evidence_id": {"$ref": "#/$defs/evidence_id"},
+              "kind": {"enum": ["SOURCE", "TEST", "REPRODUCTION", "EMPIRICAL", "REVIEW"]},
+              "reference": {"$ref": "#/$defs/text"},
+              "summary": {"$ref": "#/$defs/text"},
+              "recorded_at": {"$ref": "#/$defs/time"}
+            }
+          }
+        },
+        "test_references": {"$ref": "#/$defs/evidence_refs"},
+        "replication_status": {"enum": ["NOT_ATTEMPTED", "PASSED", "FAILED", "BLOCKED"]},
+        "applicability_across_assets": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["asset_class", "assessment", "rationale"],
+            "properties": {
+              "asset_class": {"$ref": "#/$defs/text"},
+              "assessment": {"enum": ["UNKNOWN", "HYPOTHESIZED", "SUPPORTED", "NOT_APPLICABLE"]},
+              "rationale": {"$ref": "#/$defs/claim"}
+            }
+          }
+        },
+        "unresolved_questions": {"$ref": "#/$defs/texts"},
+        "decision": {
+          "type": "object", "additionalProperties": false,
+          "required": ["status", "rationale"],
+          "properties": {
+            "status": {"enum": ["DEFER", "RETAIN", "REJECT", "SUPERSEDE"]},
+            "rationale": {"$ref": "#/$defs/claim"}
+          }
+        },
+        "supersedes": {"$ref": "#/$defs/ids"},
+        "superseded_by": {"type": ["string", "null"], "pattern": "^RI-[0-9]{4,}$(?![\\s\\S])"},
+        "lifecycle_status": {"$ref": "#/$defs/state"},
+        "lifecycle_history": {
+          "type": "array", "minItems": 1, "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["from", "to", "at", "reason", "evidence_refs"],
+            "properties": {
+              "from": {"enum": [null, "DISCOVERED", "SOURCE_REVIEWED", "CONTRACT_EXTRACTED", "REPRODUCED", "ADAPTED", "EMPIRICALLY_VALIDATED", "REJECTED", "SUPERSEDED", "BLOCKED"]},
+              "to": {"$ref": "#/$defs/state"},
+              "at": {"$ref": "#/$defs/time"},
+              "reason": {"$ref": "#/$defs/text"},
+              "evidence_refs": {"$ref": "#/$defs/evidence_refs"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

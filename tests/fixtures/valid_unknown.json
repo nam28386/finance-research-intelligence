@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1.0",
+  "records": [
+    {
+      "research_id": "RI-0001",
+      "synthetic": true,
+      "repository_url": "https://github.com/synthetic-example/not-a-real-research-source",
+      "upstream_commit_sha": null,
+      "revision_status": "UNKNOWN",
+      "inspected_at": "2026-01-01T00:00:00Z",
+      "license": {
+        "identifier": null,
+        "verification_status": "UNKNOWN",
+        "evidence_refs": []
+      },
+      "research_domain": [
+        "synthetic metadata validation"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [],
+      "evidence": [],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [
+        {
+          "asset_class": "COMEX Gold futures",
+          "assessment": "UNKNOWN",
+          "rationale": {
+            "statement": "No source or market data inspected.",
+            "epistemic_status": "UNKNOWN",
+            "evidence_refs": [],
+            "falsifiers": []
+          }
+        }
+      ],
+      "unresolved_questions": [
+        "Synthetic fixture only; upstream source, revision and license are unknown."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "No actual research or approval has occurred.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic registration, not external discovery.",
+          "evidence_refs": []
+        }
+      ]
+    }
+  ]
+}

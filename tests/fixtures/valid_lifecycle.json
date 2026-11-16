@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "records": [
+    {
+      "research_id": "RI-0001",
+      "synthetic": true,
+      "repository_url": "https://github.com/synthetic-example/not-a-real-research-source",
+      "upstream_commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-01-01T00:00:00Z",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "VERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "synthetic metadata validation"
+      ],
+      "source_references": [
+        {
+          "path": "example.py",
+          "locator": "symbol: example",
+          "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidence_refs": [
+            "E-001"
+          ]
+        }
+      ],
+      "technical_mechanisms": [
+        {
+          "statement": "Synthetic mechanism for exercising metadata gates.",
+          "epistemic_status": "HYPOTHESIS",
+          "evidence_refs": [],
+          "falsifiers": [
+            "A separately specified observation contradicts this toy mechanism."
+          ]
+        }
+      ],
+      "assumptions": [
+        {
+          "statement": "Synthetic assumptions have no external verification.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "limitations": [
+        {
+          "statement": "No market inference can be made from this fixture.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "synthetic://fixture/source",
+          "summary": "Fictional SOURCE evidence; no actual run, license verification or human review.",
+          "recorded_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "TEST",
+          "reference": "synthetic://fixture/test",
+          "summary": "Fictional TEST evidence; no actual run, license verification or human review.",
+          "recorded_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "evidence_id": "E-003",
+          "kind": "REPRODUCTION",
+          "reference": "synthetic://fixture/reproduction",
+          "summary": "Fictional REPRODUCTION evidence; no actual run, license verification or human review.",
+          "recorded_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "evidence_id": "E-004",
+          "kind": "EMPIRICAL",
+          "reference": "synthetic://fixture/empirical",
+          "summary": "Fictional EMPIRICAL evidence; no actual run, license verification or human review.",
+          "recorded_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "evidence_id": "E-005",
+          "kind": "REVIEW",
+          "reference": "synthetic://fixture/review",
+          "summary": "Fictional REVIEW evidence; no actual run, license verification or human review.",
+          "recorded_at": "2026-01-01T00:00:00Z"
+        }
+      ],
+      "test_references": [
+        "E-002"
+      ],
+      "replication_status": "PASSED",
+      "applicability_across_assets": [
+        {
+          "asset_class": "COMEX Gold futures",
+          "assessment": "UNKNOWN",
+          "rationale": {
+            "statement": "No source or market data inspected.",
+            "epistemic_status": "UNKNOWN",
+            "evidence_refs": [],
+            "falsifiers": []
+          }
+        }
+      ],
+      "unresolved_questions": [
+        "Synthetic fixture only; upstream source, revision and license are unknown."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "No actual research or approval has occurred.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "EMPIRICALLY_VALIDATED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic registration, not external discovery.",
+          "evidence_refs": []
+        },
+        {
+          "from": "DISCOVERED",
+          "to": "SOURCE_REVIEWED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic gate example; not a scientific finding.",
+          "evidence_refs": [
+            "E-001"
+          ]
+        },
+        {
+          "from": "SOURCE_REVIEWED",
+          "to": "CONTRACT_EXTRACTED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic gate example; not a scientific finding.",
+          "evidence_refs": [
+            "E-001"
+          ]
+        },
+        {
+          "from": "CONTRACT_EXTRACTED",
+          "to": "REPRODUCED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic gate example; not a scientific finding.",
+          "evidence_refs": [
+            "E-003"
+          ]
+        },
+        {
+          "from": "REPRODUCED",
+          "to": "ADAPTED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic gate example; not a scientific finding.",
+          "evidence_refs": [
+            "E-002",
+            "E-005"
+          ]
+        },
+        {
+          "from": "ADAPTED",
+          "to": "EMPIRICALLY_VALIDATED",
+          "at": "2026-01-01T00:00:00Z",
+          "reason": "Synthetic gate example; not a scientific finding.",
+          "evidence_refs": [
+            "E-004",
+            "E-005"
+          ]
+        }
+      ]
+    }
+  ]
+}
