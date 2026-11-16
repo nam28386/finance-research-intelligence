@@ -15,7 +15,8 @@ VN30 futures, rates, credit, FX, energy, and institutional finance. Transfer acr
 assets is a hypothesis requiring venue, clock, contract, liquidity, and data-rights
 checks; a successful implementation in one asset does not prove transferability.
 
-Out of scope now: external repository discovery, cloning candidates, experiments,
-ML, vector databases, RAG, microservices, live data, private data, and trading.
+Phase 02A authorizes bounded read-only public repository metadata discovery.
+Out of scope now: cloning candidates, experiments, ML, vector databases, RAG,
+microservices, live data, private data, and trading.
 Research stays separate from automated order execution. Consequential changes
 require explicit human approval.

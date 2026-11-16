@@ -1,4 +1,781 @@
 {
   "schema_version": "0.1.0",
-  "records": []
+  "records": [
+    {
+      "research_id": "RI-0001",
+      "synthetic": false,
+      "repository_url": "https://github.com/nautechsystems/nautilus_trader",
+      "upstream_commit_sha": "33492c8135a5e0dceedc21d9ee3ff7432f04ff12",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "LGPL-3.0",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Financial systems engineering",
+        "Event-driven research infrastructure"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/nautechsystems/nautilus_trader",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/nautechsystems/nautilus_trader/commit/33492c8135a5e0dceedc21d9ee3ff7432f04ff12",
+          "summary": "git ls-remote --symref observed default branch develop and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0002",
+      "synthetic": false,
+      "repository_url": "https://github.com/nkaz001/hftbacktest",
+      "upstream_commit_sha": "5f3ec40b2afb764e0fea112f941ed85523ef4e88",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Market microstructure",
+        "Limit order book backtesting"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/nkaz001/hftbacktest",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/nkaz001/hftbacktest/commit/5f3ec40b2afb764e0fea112f941ed85523ef4e88",
+          "summary": "git ls-remote --symref observed default branch master and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0003",
+      "synthetic": false,
+      "repository_url": "https://github.com/databento/databento-python",
+      "upstream_commit_sha": "f6529f1062e0642fe52334d767a72f2a75244398",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "Apache-2.0",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Financial systems engineering",
+        "Market data client interfaces"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/databento/databento-python",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/databento/databento-python/commit/f6529f1062e0642fe52334d767a72f2a75244398",
+          "summary": "git ls-remote --symref observed default branch main and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0004",
+      "synthetic": false,
+      "repository_url": "https://github.com/microsoft/RD-Agent",
+      "upstream_commit_sha": "484776c211e4fbbeef03e0ec00d6bbee7362a4f4",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Agentic research engineering",
+        "Research workflows"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/microsoft/RD-Agent",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/microsoft/RD-Agent/commit/484776c211e4fbbeef03e0ec00d6bbee7362a4f4",
+          "summary": "git ls-remote --symref observed default branch main and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0005",
+      "synthetic": false,
+      "repository_url": "https://github.com/microsoft/qlib",
+      "upstream_commit_sha": "54355232463878d2eebb91fe0ee5fa7fa1f5976c",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Quantitative research engineering",
+        "Data and research pipelines"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/microsoft/qlib",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/microsoft/qlib/commit/54355232463878d2eebb91fe0ee5fa7fa1f5976c",
+          "summary": "git ls-remote --symref observed default branch main and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0006",
+      "synthetic": false,
+      "repository_url": "https://github.com/bmoscon/cryptofeed",
+      "upstream_commit_sha": "2e05f5a061c1685eabb28b33fe535a020d88a6c6",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": null,
+        "verification_status": "UNKNOWN",
+        "evidence_refs": []
+      },
+      "research_domain": [
+        "Financial systems engineering",
+        "Crypto market data interfaces"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/bmoscon/cryptofeed",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/bmoscon/cryptofeed/commit/2e05f5a061c1685eabb28b33fe535a020d88a6c6",
+          "summary": "git ls-remote --symref observed default branch master and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0007",
+      "synthetic": false,
+      "repository_url": "https://github.com/vnpy/vnpy",
+      "upstream_commit_sha": "c6e231caf32b7fc97e6459817fff66458cf7e7c4",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Financial systems engineering",
+        "Vietnam and multi-asset research infrastructure"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/vnpy/vnpy",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/vnpy/vnpy/commit/c6e231caf32b7fc97e6459817fff66458cf7e7c4",
+          "summary": "git ls-remote --symref observed default branch master and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0008",
+      "synthetic": false,
+      "repository_url": "https://github.com/phancongdong/orderbook-l2-ofi",
+      "upstream_commit_sha": "b5947d7aa7e6345b42bf9e6179c8ecd71598021f",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Market microstructure",
+        "Level-2 order book and order flow imbalance"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/phancongdong/orderbook-l2-ofi",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/phancongdong/orderbook-l2-ofi/commit/b5947d7aa7e6345b42bf9e6179c8ecd71598021f",
+          "summary": "git ls-remote --symref observed default branch main and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0009",
+      "synthetic": false,
+      "repository_url": "https://github.com/fidetolabs/qanat",
+      "upstream_commit_sha": "1fbe05222318359467fb105ead1f6393dc358b6a",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": "MIT",
+        "verification_status": "UNVERIFIED",
+        "evidence_refs": [
+          "E-001"
+        ]
+      },
+      "research_domain": [
+        "Quantitative research engineering",
+        "Point-in-time financial data"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/fidetolabs/qanat",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/fidetolabs/qanat/commit/1fbe05222318359467fb105ead1f6393dc358b6a",
+          "summary": "git ls-remote --symref observed default branch main and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    },
+    {
+      "research_id": "RI-0010",
+      "synthetic": false,
+      "repository_url": "https://github.com/KangOxford/jax-lob",
+      "upstream_commit_sha": "d1f596610b04a09941c7a1b609e5bab541ecfc98",
+      "revision_status": "PINNED",
+      "inspected_at": "2026-11-16T13:07:35+00:00",
+      "license": {
+        "identifier": null,
+        "verification_status": "UNKNOWN",
+        "evidence_refs": []
+      },
+      "research_domain": [
+        "Market microstructure",
+        "Limit order book simulation"
+      ],
+      "source_references": [],
+      "technical_mechanisms": [],
+      "assumptions": [],
+      "limitations": [
+        {
+          "statement": "No source review or independent market validation has been performed.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E-001",
+          "kind": "SOURCE",
+          "reference": "https://github.com/KangOxford/jax-lob",
+          "summary": "Public GitHub repository metadata was inspected; any license identifier is a UI-reported label, not a license or source review.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        },
+        {
+          "evidence_id": "E-002",
+          "kind": "SOURCE",
+          "reference": "https://github.com/KangOxford/jax-lob/commit/d1f596610b04a09941c7a1b609e5bab541ecfc98",
+          "summary": "git ls-remote --symref observed default branch jaxV3 and this HEAD; the commit was not source reviewed.",
+          "recorded_at": "2026-11-16T13:07:35+00:00"
+        }
+      ],
+      "test_references": [],
+      "replication_status": "NOT_ATTEMPTED",
+      "applicability_across_assets": [],
+      "unresolved_questions": [
+        "SOURCE_NOT_REVIEWED: inspect pinned implementation and tests under a separately approved Phase 02B.",
+        "Verify license at the pinned revision and review attribution, data rights, maintenance and security.",
+        "Determine data and clock semantics, asset-transfer limits and falsifiable research contracts."
+      ],
+      "decision": {
+        "status": "DEFER",
+        "rationale": {
+          "statement": "Candidate selected for human review; scientific and implementation claims remain unverified.",
+          "epistemic_status": "UNKNOWN",
+          "evidence_refs": [],
+          "falsifiers": []
+        }
+      },
+      "supersedes": [],
+      "superseded_by": null,
+      "lifecycle_status": "DISCOVERED",
+      "lifecycle_history": [
+        {
+          "from": null,
+          "to": "DISCOVERED",
+          "at": "2026-11-16T13:07:35+00:00",
+          "reason": "Registered public metadata only; no source review, reproduction or empirical validation.",
+          "evidence_refs": [
+            "E-001",
+            "E-002"
+          ]
+        }
+      ]
+    }
+  ]
 }
