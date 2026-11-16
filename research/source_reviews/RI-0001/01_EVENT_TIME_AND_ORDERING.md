@@ -7,10 +7,10 @@ specific to the inspected code paths; upstream tests were **NOT RUN**.
 | Research concept | Observed field / behavior | Limitation |
 | --- | --- | --- |
 | event_time | `ts_event`: model comment says when event occurred (F01) | Exact exchange clock/adapter provenance UNKNOWN |
-| exchange_time | Venue sequence is present on delta (F01) | A separate verified exchange-time field is UNKNOWN in reviewed models |
+| exchange_time | No separately named `exchange_time` was established | Venue `sequence` is an ordering identifier, not a timestamp; source-clock meaning of `ts_event` is adapter-specific |
 | receive_time | No distinct field identified in these two structs | Other adapters/types not exhaustively reviewed |
 | availability_time | No distinct field established | Cannot assume `ts_init` equals first usable time |
-| processing_time | `ts_init`: instance creation timestamp (F01) | Creation need not equal processing, capture or receipt |
+| processing_time | No separate processing-time field established | The model documents `ts_init` as creation time, but a reviewed Binance recovery path can modify it; it is not a universal processing or receive clock |
 | decision_time | No field established in reviewed models | Must be separately defined by a future experiment |
 
 F06 **FACT:** the reviewed backtest path sorts and advances by `ts_init`; equal
@@ -19,6 +19,8 @@ prove `ts_init` was observable at a historical decision. A safe research contrac
 would require `availability_time(feature) <= decision_time`, plus evidence that
 the availability clock and all transformations are valid. This is a proposed
 research invariant, not an upstream field or an observed leakage defect.
+For a scoped Binance adapter example and its timestamp fallbacks and rewrites,
+see [independent QA](08_INDEPENDENT_EVIDENCE_AUDIT.md#e-timestamp-and-availability).
 
 F02/F03 **FACT:** non-snapshot delta updates with regressing metadata can warn
 while their operation is applied and metadata high-water is retained; stale L1

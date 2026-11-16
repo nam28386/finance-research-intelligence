@@ -11,6 +11,10 @@ delivery order. The [test matrix](04_TACIT_ENGINEERING_DECISIONS.md) identifies
 test source reviewed and the untested edges. Upstream code and tests were NOT RUN.
 No issue or PR explanation was reviewed; maintainer motivation is UNKNOWN.
 
+The subsequent [independent evidence audit](08_INDEPENDENT_EVIDENCE_AUDIT.md)
+qualifies timestamp provenance, the late-delta fixture, framing and adapter
+recovery scope. Its verdict is NEEDS_TARGETED_SOURCE_REVIEW; no promotion follows.
+
 ## License and security
 
 The pinned [root LICENSE](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/LICENSE)

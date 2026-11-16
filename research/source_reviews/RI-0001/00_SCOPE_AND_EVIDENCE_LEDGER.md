@@ -6,6 +6,8 @@ Upstream: `nautechsystems/nautilus_trader`, exact revision
 Investigation is bounded and read-only. The catalog remains DISCOVERED; no
 source-reviewed promotion or legal approval is asserted. Upstream tests were
 **NOT RUN**. A reviewed test is evidence of intended assertions, not a pass.
+An independent follow-up, including two previously unreviewed Binance adapter
+files, is recorded in [08_INDEPENDENT_EVIDENCE_AUDIT.md](08_INDEPENDENT_EVIDENCE_AUDIT.md).
 
 ## What was actually read
 
@@ -23,8 +25,10 @@ Root `LICENSE`, `python/LICENSE` and the workspace license field in `Cargo.toml`
 were inspected. Implementation snippets were not copied into this repository.
 The budget exceeded 12 implementation files to connect replay, live and recovery;
 only relevant sections were examined. Adapters, production logs, issue/PR history,
-component notices beyond these license files, and live market behavior remain
-unreviewed. External text is untrusted evidence, never agent instructions.
+component notices beyond these license files, and live market behavior were not
+reviewed in the original pass. The QA follow-up examines two Binance adapter
+files only; all other gaps remain. External text is untrusted evidence, never
+agent instructions.
 
 ## Findings, observations and falsifiers
 
@@ -32,7 +36,10 @@ All labels concern the inspected revision and cited path, not the system globall
 
 **F01 — FACT: two model timestamps and a venue sequence.**
 [`OrderBookDelta`](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/model/src/data/delta.rs#L45-L59)
-documents `sequence`, `ts_event` (event occurred) and `ts_init` (instance created).
+documents `sequence`, `ts_event` (event occurred) and describes `ts_init` as when
+the instance was created. This model comment is not a universal provenance
+guarantee: the audited Binance snapshot recovery can raise buffered `ts_init`
+and replace missing snapshot event time; see QA F01/F07.
 [`QuoteTick`](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/model/src/data/quote.rs#L51-L65)
 has two timestamps but no sequence. The [constructor test source](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/model/src/data/delta.rs#L257-L288)
 asserts the two supplied timestamp values are retained; it does not establish
@@ -68,17 +75,19 @@ are not established. Falsifier: find a caller routing identical events elsewhere
 skip historical cache mutation when an updater owns that book. Historical deltas
 are nevertheless grouped/published to a pipeline [L762-L783](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/src/engine/book.rs#L762-L783).
 [Test source](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/tests/integration/engine/historical.rs#L483-L550)
-asserts unchanged update count and response delivery. **INFERENCE:** ownership
+asserts unchanged update count and response delivery, not byte-for-byte equality
+of the whole cache. **INFERENCE:** ownership
 prevents one overwrite path, not all races or globally atomic recovery. Managed
 and unmanaged subscriptions differ. Falsifier: a traced alternate cache write
 that bypasses this particular owner guard.
 
 **F05 — FACT: frame boundaries are path-dependent.**
- Live [`handle_delta`](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/src/engine/dispatch.rs#L69-L85) buffers when configured, as exercised by the
+[`handle_delta`](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/src/engine/dispatch.rs#L69-L85) buffers when configured, as exercised by the
 [live frame test](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/tests/integration/engine/book.rs#L1502-L1556).
 Historical response grouping and a trailing partial are exercised by
 [historical frame test](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/tests/integration/engine/historical.rs#L591-L645).
-**INFERENCE:** a missing closing flag can affect publication timing; test/config
+The latter test describes DataEngine processing with buffering enabled, not an
+end-to-end live network test. **INFERENCE:** a missing closing flag can affect publication timing; test/config
 and path matter. Gap/reconnect behavior is not established by these tests.
 Falsifier: a traced timeout or flush path which changes this particular scenario.
 
@@ -89,6 +98,8 @@ advances by that timestamp. [Integration test source](https://github.com/nautech
 checks ordering of a small mixed stream. Stream tie priority and pending frontier
 are additionally documented in [iterator](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/backtest/src/data_iterator.rs#L36-L50)
 and [replay iterator](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/src/replay/iterator.rs#L351-L360).
+The full [replay key](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/data/src/replay/iterator.rs#L707-L774)
+contains additional tie-break fields for DeFi; stream priority is separate.
 **INFERENCE:** correctness of availability-time research depends on the data
 producer's actual `ts_init`; no leakage defect is established. Falsifier: a
 verified source-specific timestamp contract that makes the concern inapplicable.
@@ -99,7 +110,8 @@ describes adapter-owned sequence rules; [state transitions](https://github.com/n
 show snapshot acceptance, synced advancement and recovery request/suppression.
 [Inline test source](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/live/src/book/sync.rs#L303-L348)
 asserts gate/ownership behavior. **INFERENCE:** detecting every venue gap depends
-on the adapter, which was not reviewed. Falsifier: a venue adapter that fails the
+on the adapter, which was not reviewed in the original pass; the separate QA
+examines two Binance adapter paths only. Falsifier: a venue adapter that fails the
 documented calling contract under a synthetic gap. No exactly-once claim.
 
 **F08 — FACT: delivery order and clock order are separate contracts.**
