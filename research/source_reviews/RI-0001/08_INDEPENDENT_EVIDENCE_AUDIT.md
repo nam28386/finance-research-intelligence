@@ -71,7 +71,10 @@ receives `ts_init` as a parameter and passes transaction time plus that value to
 `parse_millis_or_init`. An inline [aggregate-trade test](https://github.com/nautechsystems/nautilus_trader/blob/33492c8135a5e0dceedc21d9ee3ff7432f04ff12/crates/adapters/binance/src/futures/websocket/streams/parse_data.rs#L651-L663)
 asserts a fallback for invalid trade timestamps; it does not prove every depth
 timestamp path. The parser's caller and actual capture clock were not traced.
-Receive time, first availability, processing and decision time remain UNKNOWN.
+At the time of this QA, receive time, first availability, processing and
+decision time remained UNKNOWN. A later [targeted follow-up](09_TARGETED_SOURCE_REVIEW.md)
+traces the selected Binance callback clock; it does not establish wire receive or
+first observable availability. This QA verdict is retained as historical context.
 `availability_time(feature) <= decision_time` is a proposed information-integrity
 constraint, not an established upstream guarantee or a discovered leakage bug.
 
